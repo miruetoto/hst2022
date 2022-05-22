@@ -2,11 +2,11 @@
   
     
         "post0": {
-            "title": "실험연구계획",
-            "content": "(1) HST에서 t와 노드수에 따른 계산시간측정 . (2) 예제2에서 다양한 noise 셋팅하에 유클리드, HST 2가지 방법으로 clustering performance 측정 . 당연히 유클리드와 HST만 유의미한 결과가 나올것 같아서 의미는 없을것 같습니다. | . (3) 예제2에서 다양한 noise 셋팅하에 diffusion distance와 HST의 embeddgin performance 시각화 . diffusion distance는 노이즈에 영향을 받지 않고 HST는 f를 고려하므로 노이즈에 영향을 받을 겁니다. | HST가 노이즈레벨에 따라서 어떠한 임베딩퍼포먼스의 변화를 보이는지 시각화하는게 의미있을수도 있습니다. | . (4) 예제1에서 noise를 섞은 뒤 유클리드, 그래프, HST 3가지 방법으로 그래프변환후 reconstruction하여 true값을 얼마나 잘 추론하는지? . 논문 문맥상 맞지는 않아서 추가하면 Appendix에 넣어야하지 않을까 고민중입니다 | .",
-            "url": "https://miruetoto.github.io/hst2022/2022/05/21/Untitled.html",
-            "relUrl": "/2022/05/21/Untitled.html",
-            "date": " • May 21, 2022"
+            "title": "해야할일들",
+            "content": "&#49892;&#54744;&#50672;&#44396; . (1) HST에서 t와 노드수에 따른 계산시간측정 . (2) 예제2에서 다양한 noise 셋팅하에 유클리드, HST 2가지 방법으로 clustering performance 측정 . 당연히 유클리드와 HST만 유의미한 결과가 나올것 같아서 의미는 없을것 같습니다. | . (3) 예제2에서 다양한 noise 셋팅하에 diffusion distance와 HST의 embeddgin performance 시각화 . diffusion distance는 노이즈에 영향을 받지 않고 HST는 f를 고려하므로 노이즈에 영향을 받을 겁니다. | HST가 노이즈레벨에 따라서 어떠한 임베딩퍼포먼스의 변화를 보이는지 시각화하는게 의미있을수도 있습니다. | . (4) 예제1에서 noise를 섞은 뒤 유클리드, 그래프, HST 3가지 방법으로 그래프변환후 reconstruction하여 true값을 얼마나 잘 추론하는지? . 논문 문맥상 맞지는 않아서 추가하면 Appendix에 넣어야하지 않을까 고민중입니다 | .",
+            "url": "https://miruetoto.github.io/hst2022/2099/01/01/%ED%95%B4%EC%95%BC%ED%95%A0%EC%9D%BC%EB%93%A4.html",
+            "relUrl": "/2099/01/01/%ED%95%B4%EC%95%BC%ED%95%A0%EC%9D%BC%EB%93%A4.html",
+            "date": " • Jan 1, 2099"
         }
         
     
