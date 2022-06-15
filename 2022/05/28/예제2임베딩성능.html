@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>예제2 임베딩성능측정 | hst</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="예제2 임베딩성능측정" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://miruetoto.github.io/hst2022/2022/05/28/%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.html" />
+<meta property="og:url" content="https://miruetoto.github.io/hst2022/2022/05/28/%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.html" />
+<meta property="og:site_name" content="hst" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-28T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="예제2 임베딩성능측정" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-28T00:00:00-05:00","datePublished":"2022-05-28T00:00:00-05:00","headline":"예제2 임베딩성능측정","mainEntityOfPage":{"@type":"WebPage","@id":"https://miruetoto.github.io/hst2022/2022/05/28/%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.html"},"url":"https://miruetoto.github.io/hst2022/2022/05/28/%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hst2022/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://miruetoto.github.io/hst2022/feed.xml" title="hst" /><link rel="shortcut icon" type="image/x-icon" href="/hst2022/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hst2022/">hst</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hst2022/about/">About Me</a><a class="page-link" href="/hst2022/search/">Search</a><a class="page-link" href="/hst2022/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">예제2 임베딩성능측정</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-28T00:00:00-05:00" itemprop="datePublished">
+        May 28, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/miruetoto/hst2022/tree/master/_notebooks/2022-05-28-예제2임베딩성능.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/hst2022/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/miruetoto/hst2022/master?filepath=_notebooks%2F2022-05-28-%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/hst2022/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/miruetoto/hst2022/blob/master/_notebooks/2022-05-28-예제2임베딩성능.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/hst2022/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Fmiruetoto%2Fhst2022%2Fblob%2Fmaster%2F_notebooks%2F2022-05-28-%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/hst2022/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-05-28-예제2임베딩성능.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">rpy2</span> 
+<span class="o">%</span><span class="k">load_ext</span> rpy2.ipython
+<span class="o">%</span><span class="k">run</span> pybase
+<span class="o">%</span><span class="k">run</span> heavysnow 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">777</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="n">pi</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">60</span>
+<span class="n">ang</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">V</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">r</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">vx</span><span class="o">=</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span>
+<span class="n">vy</span><span class="o">=</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang</span><span class="p">)</span>
+<span class="n">fmean</span><span class="o">=</span><span class="n">vx</span><span class="o">*</span><span class="mi">0</span><span class="o">+</span><span class="mi">1</span>
+<span class="c1">#fmean[vy&lt;0]=3</span>
+<span class="c1">#fmean[vy&gt;=0]= -3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snrs</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">stds</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">snrs</span>
+<span class="n">stds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.9</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">bs</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="p">[</span><span class="n">fmean</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="o">*</span><span class="n">stds</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Σ</span><span class="o">=</span><span class="n">l2distance</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([</span><span class="n">vx</span><span class="p">,</span><span class="n">vy</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">θ</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="n">W</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">Σ</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">θ</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="n">E</span><span class="o">=</span><span class="n">W</span><span class="o">&gt;</span><span class="mi">0</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">W</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="c1"># color</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="n">col</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cm</span><span class="o">.</span><span class="n">rainbow</span><span class="p">((</span><span class="n">ang</span><span class="o">+</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">pi</span><span class="p">)))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">I</span><span class="o">=</span><span class="mi">10</span> <span class="c1"># noise level </span>
+<span class="n">J</span><span class="o">=</span><span class="mi">3</span> <span class="c1"># bs </span>
+<span class="n">K</span><span class="o">=</span><span class="mi">100</span> <span class="c1"># iter</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="n">pca</span><span class="o">=</span><span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gs</span><span class="o">=</span><span class="p">[[</span><span class="n">GraphSignal</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">fmean</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="o">*</span><span class="n">stds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hs</span><span class="o">=</span><span class="p">[[</span><span class="n">HeavysnowTransform</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dists</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span> <span class="c1"># i=noise_level, j=b, k=iter, </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snow</span><span class="p">(</span><span class="n">tau</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">bs</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> 
+            <span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0,0
+0,1
+0,2
+1,0
+1,1
+1,2
+2,0
+2,1
+2,2
+3,0
+3,1
+3,2
+4,0
+4,1
+4,2
+5,0
+5,1
+5,2
+6,0
+6,1
+6,2
+7,0
+7,1
+7,2
+8,0
+8,1
+8,2
+9,0
+9,1
+9,2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dists</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(10, 3, 100, 60, 2)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dists</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:][:,</span><span class="mi">0</span><span class="p">],</span><span class="n">dists</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,:,:][:,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f8637aae980&gt;]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dists_stds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">dists_stds</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)))</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dists_stds</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[[0.61517741, 1.22923445, 0.98873536, ..., 1.00694884,
+         0.91336061, 1.07562174],
+        [1.06567876, 0.90265391, 0.98904638, ..., 0.89307949,
+         0.83881112, 1.45435043],
+        [0.75444303, 0.7954398 , 0.84647501, ..., 1.01741042,
+         1.0790329 , 1.33487337]],
+
+       [[0.4866689 , 0.98133635, 0.79209552, ..., 0.7830513 ,
+         0.9988982 , 0.75573039],
+        [0.68716658, 1.20046307, 0.68621021, ..., 0.84142021,
+         0.43989608, 0.50761925],
+        [0.82614184, 1.5531921 , 0.99814786, ..., 1.02010174,
+         0.75085306, 1.29259211]],
+
+       [[0.9643349 , 1.14035754, 0.90967937, ..., 0.79786701,
+         1.0184768 , 0.74879311],
+        [0.68383878, 0.78658989, 0.57842878, ..., 1.26950477,
+         1.4120686 , 0.58947428],
+        [1.39862745, 1.04842819, 0.87490072, ..., 0.97788069,
+         1.17128558, 0.9857536 ]],
+
+       ...,
+
+       [[5.76543253, 4.48993187, 4.81324596, ..., 7.33911354,
+         4.41765721, 7.13050433],
+        [1.18398394, 1.43745565, 1.15611795, ..., 0.97284843,
+         0.94130544, 1.49229896],
+        [1.01254896, 0.63266696, 1.1670199 , ..., 0.82722283,
+         0.96257678, 0.82646776]],
+
+       [[7.26370873, 6.4694549 , 4.94823056, ..., 5.88935115,
+         5.76636308, 6.9643815 ],
+        [3.59531692, 1.47129115, 1.73600751, ..., 0.93471639,
+         3.00817065, 1.27487408],
+        [0.5683852 , 0.38297994, 0.57472652, ..., 0.66482264,
+         0.8135363 , 0.77451957]],
+
+       [[6.24520166, 6.36645757, 5.99188054, ..., 4.66408625,
+         7.69780886, 8.74124485],
+        [2.04028074, 1.59565055, 2.5610895 , ..., 2.19437434,
+         1.15788951, 6.11173709],
+        [0.99633457, 1.20395828, 1.06553455, ..., 0.53368906,
+         0.77589259, 1.05753562]]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dists_stds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.97068626, 0.90377011, 0.91099634],
+       [0.88282443, 0.91802767, 0.9312816 ],
+       [0.96458785, 0.9071536 , 0.91300746],
+       [1.10041445, 0.89568394, 0.94734727],
+       [1.77820614, 0.89690819, 0.95889456],
+       [3.19719672, 0.9463845 , 0.94363317],
+       [4.68124141, 0.96175326, 0.95142872],
+       [5.84643839, 1.09283849, 0.95388463],
+       [6.36369079, 1.34267409, 0.87329048],
+       [6.40575939, 1.74837802, 0.91549259]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dists_stds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.970686</td>
+      <td>0.903770</td>
+      <td>0.910996</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.882824</td>
+      <td>0.918028</td>
+      <td>0.931282</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.964588</td>
+      <td>0.907154</td>
+      <td>0.913007</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.100414</td>
+      <td>0.895684</td>
+      <td>0.947347</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.778206</td>
+      <td>0.896908</td>
+      <td>0.958895</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3.197197</td>
+      <td>0.946385</td>
+      <td>0.943633</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4.681241</td>
+      <td>0.961753</td>
+      <td>0.951429</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.846438</td>
+      <td>1.092838</td>
+      <td>0.953885</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.363691</td>
+      <td>1.342674</td>
+      <td>0.873290</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6.405759</td>
+      <td>1.748378</td>
+      <td>0.915493</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b=0.05&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.1&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.5&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sd=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stds</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>b=0.05</th>
+      <th>b=0.1</th>
+      <th>b=0.5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>sd=0.1</th>
+      <td>0.970686</td>
+      <td>0.903770</td>
+      <td>0.910996</td>
+    </tr>
+    <tr>
+      <th>sd=0.2</th>
+      <td>0.882824</td>
+      <td>0.918028</td>
+      <td>0.931282</td>
+    </tr>
+    <tr>
+      <th>sd=0.3</th>
+      <td>0.964588</td>
+      <td>0.907154</td>
+      <td>0.913007</td>
+    </tr>
+    <tr>
+      <th>sd=0.4</th>
+      <td>1.100414</td>
+      <td>0.895684</td>
+      <td>0.947347</td>
+    </tr>
+    <tr>
+      <th>sd=0.5</th>
+      <td>1.778206</td>
+      <td>0.896908</td>
+      <td>0.958895</td>
+    </tr>
+    <tr>
+      <th>sd=0.6</th>
+      <td>3.197197</td>
+      <td>0.946385</td>
+      <td>0.943633</td>
+    </tr>
+    <tr>
+      <th>sd=0.7</th>
+      <td>4.681241</td>
+      <td>0.961753</td>
+      <td>0.951429</td>
+    </tr>
+    <tr>
+      <th>sd=0.8</th>
+      <td>5.846438</td>
+      <td>1.092838</td>
+      <td>0.953885</td>
+    </tr>
+    <tr>
+      <th>sd=0.9</th>
+      <td>6.363691</td>
+      <td>1.342674</td>
+      <td>0.873290</td>
+    </tr>
+    <tr>
+      <th>sd=1</th>
+      <td>6.405759</td>
+      <td>1.748378</td>
+      <td>0.915493</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Embeddingperformance_tau10.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> $\tau=150,000$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gs</span><span class="o">=</span><span class="p">[[</span><span class="n">GraphSignal</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">fmean</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="o">*</span><span class="n">stds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span> 
+<span class="n">hs</span><span class="o">=</span><span class="p">[[</span><span class="n">HeavysnowTransform</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span> 
+<span class="n">dists2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span> <span class="c1"># i=noise_level, j=b, k=iter, </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snow</span><span class="p">(</span><span class="n">tau</span><span class="o">=</span><span class="mi">150000</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">bs</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> 
+            <span class="n">dists2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+<span class="n">dists_stds2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">dists_stds2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists2</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)))</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>        
+<span class="n">dists_stds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0,0
+9,0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dists_stds2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b=0.05&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.1&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.5&#39;</span><span class="p">]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">index</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sd=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stds</span><span class="p">]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Embeddingperformance_tau15.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>-</code> $\tau=200,000$</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gs</span><span class="o">=</span><span class="p">[[</span><span class="n">GraphSignal</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">fmean</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span><span class="o">*</span><span class="n">stds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)]</span> 
+<span class="n">hs</span><span class="o">=</span><span class="p">[[</span><span class="n">HeavysnowTransform</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">)]</span> 
+<span class="n">dists3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span> <span class="c1"># i=noise_level, j=b, k=iter, </span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snow</span><span class="p">(</span><span class="n">tau</span><span class="o">=</span><span class="mi">200000</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">bs</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> 
+            <span class="n">dists3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,:,:]</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">hs</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">snowdistance</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+<span class="n">dists_stds3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">I</span><span class="p">,</span><span class="n">J</span><span class="p">,</span><span class="n">K</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">J</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">dists_stds3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">dists3</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="o">...</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)))</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>        
+<span class="n">dists_stds3</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>        
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df3</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dists_stds3</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b=0.05&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.1&#39;</span><span class="p">,</span><span class="s1">&#39;b=0.5&#39;</span><span class="p">]</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">index</span><span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sd=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">stds</span><span class="p">]</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Embeddingperformance_tau20.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/hst2022/2022/05/28/%EC%98%88%EC%A0%9C2%EC%9E%84%EB%B2%A0%EB%94%A9%EC%84%B1%EB%8A%A5.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hst2022/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hst2022/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hst2022/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
