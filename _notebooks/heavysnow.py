@@ -1,5 +1,6 @@
 import numpy as np
 from plotnine import * 
+import tqdm 
 
 class GraphSignal: 
     def __init__(self,V,W,f):
@@ -80,7 +81,14 @@ class HeavysnowTransform:
         self.euclidweight=np.exp(-self.eucliddistance/(2*self.theta**2))-np.eye(self.n)
         
     def _updatesnowdistance(self):
-        self.snowdistance=np.sqrt(np.sum((self.snowygrounds[:,np.newaxis,:]-self.snowygrounds[np.newaxis,:,:])**2,axis=-1))
+        try: 
+            self.snowdistance=np.sqrt(np.sum((self.snowygrounds[:,np.newaxis,:]-self.snowygrounds[np.newaxis,:,:])**2,axis=-1))
+        except MemoryError:
+            print("Due to insufficient memory, the distance is calculated using a for loop.") 
+            for u in tqdm.tqdm(range(self.n)):                
+                for v in range(self.n):                    
+                    self.snowdistance[u,v]=np.sqrt(np.sum((self.snowygrounds[u,:] - self.snowygrounds[v,:])**2))
+            self.snowdistance = self.snowdistance + self.snowdistance.T 
              
     def _updatesnowweight(self):
         self.snowweight=np.exp(-self.snowdistance/(2*self.tau*self.theta**2))-np.eye(self.n)
@@ -91,29 +99,23 @@ class HeavysnowTransform:
         self.theta=np.sqrt(1/2)*self.b
         self.tau=tau
         self.snowygrounds=np.repeat(self.f,self.tau+1).reshape(self.n,self.tau+1)
-        #print('HST (tau= %s, b=%s)' % (self.tau,self.b))
-        for ell in np.arange(1,self.tau+1,dtype='int'): 
-            #print('\r'+str(ell)+'/'+str(self.tau),sep='',end='')
+        print('HST (tau= %s, b=%s)' % (self.tau,self.b))
+        for ell in tqdm.tqdm(range(1,self.tau+1)):
             self._snowonce(ell,maxflow)
-        #print('\n'+'HST completed and all history is recorded.')
+        print('Calculate distance and weights')
         self._updatesnowdistance()
         self._updatesnowweight()
-        self._updateeuclidweight()                
+        self._updateeuclidweight()  
+        print('HST completed and all history is recorded.')
 
-    def snow2(self,tau,b=1,maxflow=100000):
+    def _snow_for_simulation(self,tau,b=1,maxflow=100000): # 시뮬레이션용 
         self._initialize()
         self.b=b
         self.theta=np.sqrt(1/2)*self.b
         self.tau=tau
         self.snowygrounds=np.repeat(self.f,self.tau+1).reshape(self.n,self.tau+1)
-        #print('HST (tau= %s, b=%s)' % (self.tau,self.b))
-        for ell in np.arange(1,self.tau+1,dtype='int'): 
-            #print('\r'+str(ell)+'/'+str(self.tau),sep='',end='')
+        for ell in tqdm.tqdm(range(1,self.tau+1)):
             self._snowonce(ell,maxflow)
-        #print('\n'+'HST completed and all history is recorded.')
-        #self._updatesnowdistance()
-        #self._updatesnowweight()
-        #self._updateeuclidweight()       
         
     def adjustingtheta(self,theta): 
         self.theta=theta
